@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 Thread thread = new Thread() {
                     @Override
                     public void run() {
-                        result=geo.getAddress(txt_la.getText().toString(),txt_long.getText().toString());
+                        result=geo.getAddress(txt_la.getText().toString().trim(),txt_long.getText().toString().trim());
                         Runnable runnable = new Runnable() {
                             @Override
                             public void run() {
