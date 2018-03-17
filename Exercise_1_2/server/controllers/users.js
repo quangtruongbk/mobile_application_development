@@ -11,7 +11,7 @@ router.get('/:lat1/:long1/:lat2/:long2',function(req,res){
 	var result=getDistanceFromLatLonInKm(lat1,long1,lat2,long2);
 	// return f;
   // 	return res.send(f);
-  res.end(JSON.stringify({Distance: result}));
+ 	res.end(JSON.stringify({Distance: result}));
 });
 
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
@@ -21,8 +21,7 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
   var a = 
   Math.sin(dLat/2) * Math.sin(dLat/2) +
   Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
-  Math.sin(dLon/2) * Math.sin(dLon/2)
-  ; 
+  Math.sin(dLon/2) * Math.sin(dLon/2); 
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
   var d = R * c; // Distance in km
   return d;
