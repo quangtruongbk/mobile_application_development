@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 tv1=(TextView) findViewById(R.id.tv1);
-                                tv1.setText(result);
+                                if(result==null) tv1.setText("Location is null");
+                                else tv1.setText(result);
                             }
                         };
                         mHandler.post(runnable);
